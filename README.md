@@ -4,7 +4,7 @@
 
 ## Change Log
 
--N/A
+* 30/05: Due date fixed up; typo when expressing debug/release build modes fixed up; a few other typos; clarification of number of lines committed
 
 [toc]
 
@@ -221,7 +221,7 @@ machines.
 
 To measure your performance:
 
-1. Make sure you change CMake to build in `[Release]` mode by running `cmake -DCMAKE_BUILD_TYPE=Debug` in the project directory.
+1. Make sure you change CMake to build in `[Release]` mode by running `cmake -DCMAKE_BUILD_TYPE=Release` in the project directory.
    This will remove debug symbols and other things, which will mean your code runs faster, but is
    near impossible to debug for mere mortals. This is usually what is done when you're finished
    developing and ready for release.
@@ -313,7 +313,7 @@ For assignment 1, there are some requirements for us to track your ongoing progr
 1. You must make commits on at least 3 unique days prior to due date.
 2. All of your commits to master must successfully compile (according to the pipeline). You are given 3 exceptions.
 3. Your commits must be meaningful in description (e.g. "Continued work on loop speed")
-4. Each commit must be no longer than 50 lines of code. You are given no exceptions.
+4. Each commit include no more than 50 lines additions of code (this may differ in future assignments). You are given no exceptions.
 
 Failure to adhere to these guidelines in they're entirety may result in a mimumum 20% penalty. Any moderate or significant failure may result in a 0 grade.
 
