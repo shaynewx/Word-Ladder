@@ -180,7 +180,6 @@ Most of the files here will be quite familiar to you. But there are key files in
  * `main.cpp`: The file where a main function exists for debugging.
  * `word_ladder.cpp`: The library file that has the word ladder generator function.
  * `word_ladder.h`: The header file for the word ladder generator library file.
- * `word_ladder.h`: The header file for the word ladder generator library file.
  * `word_ladder_test.cpp`: The test file where you can write tests to help debug your code.
  * `word_ladder_benchmark.cpp`: A test file to help you understand how you're performing with the hardest test.
 
@@ -217,7 +216,7 @@ test, you may still get the marks, but it's just something we can't guarantee.
 
 Please note: This benchmark test is VERY difficult. If your code takes an hour to run this test that's
 not something that should make you panic. It's quite easy to fall in the time limit for most of the
-tests. Don't stress and just make sure earlier tests fall in the 15 second time limit on CSE
+tests. Don't stress and just make sure earlier tests fall in the 12 second time limit on CSE
 machines.
 
 To measure your performance:
@@ -331,7 +330,7 @@ Relevant scholarship authorities will be informed if students holding scholarshi
 an incident of plagiarism or other misconduct.
 
 Do not provide or show your assignment work to any other person &mdash; apart from the teaching
-staff of COMP6080.
+staff of COMP6771.
 
 If you knowingly provide or show your assignment work to another person for any reason, and work
 derived from it is submitted, you may be penalised, even if the work was submitted without your
@@ -354,7 +353,7 @@ If you want to check if you've actually not totally screwed it all up, and see i
 
 ## 9. Submission
 
-This assignment is due *Friday 21st of April, 19:59:59*.
+This assignment is due *Friday 14th of April, 19:59:59*.
 
 To submit your assignment, you must you've pushed all of your code to your gitlab master branch. You can check if you've done this properly by seeing what code is on the gitlab site on your master branch.
  
