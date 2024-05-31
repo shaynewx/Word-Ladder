@@ -5,7 +5,7 @@
 ## Change Log
 
 * 30/05: Due date fixed up; typo when expressing debug/release build modes fixed up; a few other typos; clarification of number of lines committed
-* 31/05: Few more typo fixes
+* 31/05: Few more typo fixes; including the benchmark_exe; clarifications on squashing when working on other branches.
 
 [toc]
 
@@ -227,7 +227,7 @@ To measure your performance:
    near impossible to debug for mere mortals. This is usually what is done when you're finished
    developing and ready for release.
 
-2. In the `build` folder, build with `make word_ladder_benchmark` and run `time ./word_ladder_benchmark` to run the benchmark. It
+2. In the `build` folder, build with `make word_ladder_benchmark_exe` and run `time ./word_ladder_benchmark` to run the benchmark. It
    will output something like this below. The time you should measure yourself against is the "user"
    time. If this is under 12 seconds then you're all good.
 
@@ -317,6 +317,8 @@ For assignment 1, there are some requirements for us to track your ongoing progr
 4. Each commit include no more than 50 lines additions of code (this may differ in future assignments). You are given no exceptions.
 
 Failure to adhere to these guidelines in their entirety may result in a mimumum 20% penalty. Any moderate or significant failure may result in a 0 grade.
+
+Please note: If you choose to work on separate branches before merging into master, you must squash your commits when merging back in. This means that you can make many commits on other branches fine, it's just whatever comes back to master needs to be a single commit that compiles with no more than 50 line additions.
 
 ## 7. Originality of Work
 
