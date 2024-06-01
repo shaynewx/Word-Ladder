@@ -5,6 +5,7 @@
 ## Change Log
 
 * 30/05: Due date fixed up; typo when expressing debug/release build modes fixed up; a few other typos; clarification of number of lines committed
+* 31/05: Few more typo fixes
 
 [toc]
 
@@ -228,7 +229,7 @@ To measure your performance:
 
 2. In the `build` folder, build with `make word_ladder_benchmark` and run `time ./word_ladder_benchmark` to run the benchmark. It
    will output something like this below. The time you should measure yourself against is the "user"
-   time. If this is under 15 seconds then you're all good.
+   time. If this is under 12 seconds then you're all good.
 
 ```txt
 real    1m45.089s
@@ -236,7 +237,7 @@ user    1m44.497s
 sys     0m0.560s
 ```
 
-4. Once you are happy with your performance, don't forget to change CMake back to `[Debug]` by running `cmake -DCMAKE_BUILD_TYPE=Debug` in the project directory. This will add back debug symbols in so that you can more effectively debug your code.
+3. Once you are happy with your performance, don't forget to change CMake back to `[Debug]` by running `cmake -DCMAKE_BUILD_TYPE=Debug` in the project directory. This will add back debug symbols in so that you can more effectively debug your code.
 
 ### 4.5. Compiling with main.cpp
 
@@ -315,7 +316,7 @@ For assignment 1, there are some requirements for us to track your ongoing progr
 3. Your commits must be meaningful in description (e.g. "Continued work on loop speed")
 4. Each commit include no more than 50 lines additions of code (this may differ in future assignments). You are given no exceptions.
 
-Failure to adhere to these guidelines in they're entirety may result in a mimumum 20% penalty. Any moderate or significant failure may result in a 0 grade.
+Failure to adhere to these guidelines in their entirety may result in a mimumum 20% penalty. Any moderate or significant failure may result in a 0 grade.
 
 ## 7. Originality of Work
 
@@ -353,9 +354,9 @@ If you want to check if you've actually not totally screwed it all up, and see i
 
 ## 9. Submission
 
-This assignment is due *Friday 14th of April, 19:59:59*.
+This assignment is due *Friday 14th of June, 19:59:59*.
 
-To submit your assignment, you must you've pushed all of your code to your gitlab master branch. You can check if you've done this properly by seeing what code is on the gitlab site on your master branch.
+To submit your assignment, you must ensure you've pushed all of your code to your gitlab master branch. You can check if you've done this properly by seeing what code is on the gitlab site on your master branch.
  
 We will collect the latest work on your master branch of gitlab at the time of submission.
 
