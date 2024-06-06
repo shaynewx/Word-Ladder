@@ -1,9 +1,18 @@
 #include "word_ladder.h"
 
 #include <catch2/catch.hpp>
+#include <string>
 
 TEST_CASE("word_ladder::read_lexicon works as expected") {
-	REQUIRE_FALSE("fill this in with a proper test");
+	auto const lexicon = word_ladder::read_lexicon("./english.txt");
+
+	// Check if some specific words are contained
+	REQUIRE(lexicon.find("aa") != lexicon.end());
+	REQUIRE(lexicon.find("aah") != lexicon.end());
+	REQUIRE(lexicon.find("zyzzyvas") != lexicon.end());
+
+	// check the total number of words in the dictionary
+	REQUIRE(lexicon.size() == 127142);
 }
 
 TEST_CASE("at -> it") {

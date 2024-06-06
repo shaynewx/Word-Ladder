@@ -5,3 +5,5 @@ Testing/
 .clangd/
 .vs/
 .DS_Store
+cmake-build-debug/
+.idea/
