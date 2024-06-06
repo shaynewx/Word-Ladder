@@ -7,9 +7,8 @@
 //  be used for more "primitive" debugging as we know that working solely with test
 //  frameworks might be overwhelming for some.
 
-auto main() -> int
-{
-    auto const english_lexicon = word_ladder::read_lexicon("./english.txt");
-    auto const ladders = word_ladder::generate("fly", "sky", english_lexicon);
-    // debug here
+auto main() -> int {
+	auto const english_lexicon = word_ladder::read_lexicon("./english.txt");
+	auto const ladders = word_ladder::generate("fly", "sky", english_lexicon);
+	// debug here
 }
