@@ -2,6 +2,7 @@
 #include <fstream> // for std::ifstream
 #include <queue> // for std::queue
 #include <stdexcept> // for std::runtime_error
+#include <algorithm>
 
 auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<std::string> {
 	std::unordered_set<std::string> lexicon;
