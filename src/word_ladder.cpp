@@ -15,7 +15,7 @@ auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<st
 	std::string word;
 	while (std::getline(file, word)) {
 		if (!word.empty()) {
-			lexicon.emplace(std::move(word));
+			lexicon.emplace(std::move(worlad));
 		}
 	}
 
