@@ -15,7 +15,7 @@ auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<st
 	std::string word;
 	while (std::getline(file, word)) {
 		if (!word.empty()) {
-			lexicon.emplace(std::move(worlad));
+			lexicon.emplace(std::move(word));
 		}
 	}
 
@@ -31,16 +31,18 @@ auto word_ladder::generate(const std::string& from,
 	std::queue<std::vector<std::string>> queue; // 使用queue储存待访问单词
 	std::unordered_set<std::string> visited; // 使用set储存已访问单词
 	queue.push({from}); // 初始化queue
-	visited.insert(from); // 初始化visited
 
 	// 当队列不为空时，对queue中每个单词寻找与之长度一样但相差一个字母的单词
 	while (!queue.empty()) {
 		size_t current_size = queue.size();
+		std::unordered_set<std::string> to_be_visited; // 记录本层访问过的单词
+
 		// 依次遍历queue中的单词
 		for (size_t i = 0; i < current_size; i++) {
 			std::vector<std::string> path = queue.front();
 			queue.pop(); // 选择queue的第一个单词，储存并pop出去
 			std::string current_word = path.back(); // 储存路径中最后一个单词，然后搜寻下一层单词的
+
 			for (size_t pos = 0; pos < current_word.length(); ++pos) { // 对current_word的每个字符位置进行变换，尝试a-z
 				char original_char = current_word[pos]; // 当前字母
 				for (char c = 'a'; c <= 'z'; ++c) {
@@ -49,18 +51,19 @@ auto word_ladder::generate(const std::string& from,
 					current_word[pos] = c; // 更改字符
 					// 只有那些既存在于字典中又未被之前的搜索路径访问过的单词才会被处理
 					if (lexicon.find(current_word) != lexicon.end() and visited.find(current_word) == visited.end()) {
-						visited.insert(current_word); // 将当前单词添加到已访问集合中，记录下这个单词已经被使用过
 						std::vector<std::string> new_path = path; // 创建一个新的路径
 						new_path.push_back(current_word); // 将当前单词添加到新路径的末尾
 						if (current_word == to) {
 							result.push_back(new_path);
 						}
 						queue.push(new_path);
+						to_be_visited.insert(current_word); // 在本层结束前不标记为已访问
 					}
-					current_word[pos] = original_char; // 恢复原始字符
 				}
+				current_word[pos] = original_char; // 恢复原始字符
 			}
 		}
+		visited.insert(to_be_visited.begin(), to_be_visited.end()); // 更新已访问集合
 	}
 
 	return result; // 返回结果，如果没有找到路径则为空
