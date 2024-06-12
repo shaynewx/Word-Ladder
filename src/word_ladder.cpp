@@ -23,7 +23,6 @@ auto word_ladder::generate(const std::string& from,
                            const std::string& to,
                            const std::unordered_set<std::string>& lexicon) -> std::vector<std::vector<std::string>> {
 	std::vector<std::vector<std::string>> result; // 储存单词阶梯的vector
-	(void)to;
 
 	std::unordered_set<std::string> filtered_lexicon; // 过滤后的词典
 	size_t length = from.size(); // 计算 from 单词的长度

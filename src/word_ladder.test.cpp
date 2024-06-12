@@ -2,6 +2,7 @@
 
 #include <catch2/catch.hpp>
 #include <string>
+#include <iostream>
 
 TEST_CASE("word_ladder::read_lexicon works as expected") {
 	auto const lexicon = word_ladder::read_lexicon("./english.txt");
@@ -55,6 +56,35 @@ TEST_CASE("awake -> sleep") {
 	    {"awake", "aware", "sware", "share", "sharn", "shawn", "shewn", "sheen", "sheep", "sleep"},
 	    {"awake", "aware", "sware", "share", "shire", "shirr", "shier", "sheer", "sheep", "sleep"}};
 	auto const ladders = word_ladder::generate("awake", "sleep", lexicon);
+
+	CHECK(ladders == expected);
+}
+
+TEST_CASE("work -> play") {
+	auto const lexicon = std::unordered_set<std::string>{
+	    "work", "fork", "form", "foam", "flam", "flay", "play",
+	    "pork", "perk", "peak", "pean", "plan", "peat", "plat", "pert",
+	    "porn", "pirn", "pian","port",
+	    "word", "wood", "pood", "plod", "ploy",
+	    "worm",
+	    "worn",
+	    "wort", "bort", "boat", "blat",
+	    "wert"};
+
+	const auto expected = std::vector<std::vector<std::string>>{
+	    {"work", "fork", "form", "foam", "flam", "flay", "play"},
+	    {"work", "pork", "perk", "peak", "pean", "plan", "play"},
+	    {"work", "pork", "perk", "peak", "peat", "plat", "play"},
+	    {"work", "pork", "perk", "pert", "peat", "plat", "play"},
+	    {"work", "pork", "porn", "pirn", "pian", "plan", "play"},
+	    {"work", "pork", "port", "pert", "peat", "plat", "play"},
+	    {"work", "word", "wood", "pood", "plod", "ploy", "play"},
+	    {"work", "worm", "form", "foam", "flam", "flay", "play"},
+	    {"work", "worn", "porn", "pirn", "pian", "plan", "play"},
+	    {"work", "wort", "bort", "boat", "blat", "plat", "play"},
+	    {"work", "wort", "port", "pert", "peat", "plat", "play"},
+	    {"work", "wort", "wert", "pert", "peat", "plat", "play"}};
+	auto const ladders = word_ladder::generate("work", "play", lexicon);
 
 	CHECK(ladders == expected);
 }
