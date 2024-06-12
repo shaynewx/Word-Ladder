@@ -32,12 +32,12 @@ auto word_ladder::generate(const std::string& from,
 	             std::inserter(filtered_lexicon, filtered_lexicon.end()),
 	             [length](const std::string& word) { return word.size() == length; });
 
-
 	std::queue<std::vector<std::string>> queue; // use queue to store words which wait to search next hop
 	std::unordered_set<std::string> visited; // use set to store words have been visited
 	queue.push({from}); // initialize the queue by push the vector of first word
 
-	// for each word in the queue, search for the word with same length but with one letter difference while queue is not empty
+	// for each word in the queue, search for the word with same length but with one letter difference while queue is
+	// not empty
 	while (!queue.empty()) {
 		size_t current_size = queue.size();
 		std::unordered_set<std::string> to_be_visited; // record the words have been visited in this layer
@@ -55,7 +55,7 @@ auto word_ladder::generate(const std::string& from,
 					if (c == original_char)
 						continue;
 					current_word[pos] = c;
-					//only handle those words which is in the filtered_lexicon and have not been visited
+					// only handle those words which is in the filtered_lexicon and have not been visited
 					if (filtered_lexicon.contains(current_word) and !visited.contains(current_word)) {
 						std::vector<std::string> new_path = path;
 						new_path.push_back(current_word); // create a new path and add the word into it
@@ -73,5 +73,12 @@ auto word_ladder::generate(const std::string& from,
 	}
 
 	std::sort(result.begin(), result.end()); // sort the solutions in lexicographical order
+	for (const auto& ladder : result) {
+		for (const auto& word : ladder) {
+			std::cout << word << " ";
+		}
+		std::cout << std::endl;
+	}
+
 	return result;
 }
