@@ -32,8 +32,8 @@ auto word_ladder::generate(const std::string& from,
 	             std::inserter(filtered_lexicon, filtered_lexicon.end()),
 	             [length](const std::string& word) { return word.size() == length; });
 
-//	size_t s = filtered_lexicon.size();
-//	std::cout << s << '\n';
+	//	size_t s = filtered_lexicon.size();
+	//	std::cout << s << '\n';
 
 	std::queue<std::vector<std::string>> queue; // 使用queue储存待访问单词
 	std::unordered_set<std::string> visited; // 使用set储存已访问单词
