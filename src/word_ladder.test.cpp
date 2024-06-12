@@ -42,8 +42,8 @@ TEST_CASE("awake -> sleep") {
 	};
 
 	const auto expected = std::vector<std::vector<std::string>>{
-	    {"awake", "aware", "sware", "share", "shire", "shirr", "shier", "sheer", "sheep", "sleep"},
-	    {"awake", "aware", "sware", "share", "sharn", "shawn", "shewn", "sheen", "sheep", "sleep"}
+	    {"awake","aware","sware","share","sharn","shawn","shewn","sheen","sheep","sleep"},
+	    {"awake","aware","sware","share","shire","shirr","shier","sheer","sheep","sleep"}
 	};
 	auto const ladders = word_ladder::generate("awake", "sleep", lexicon);
 
