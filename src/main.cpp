@@ -9,6 +9,6 @@
 
 auto main() -> int {
 	auto const english_lexicon = word_ladder::read_lexicon("./english.txt");
-	auto const ladders = word_ladder::generate("Cat", "Dog", english_lexicon);
+	auto const ladders = word_ladder::generate("atlases", "cabaret", english_lexicon);
 	// debug here
 }

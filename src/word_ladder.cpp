@@ -1,4 +1,5 @@
 #include "word_ladder.h"
+
 #include <algorithm>
 #include <cctype>
 #include <fstream>
@@ -6,8 +7,11 @@
 #include <queue>
 
 // convert a string to lowercase
-void to_lower(std::string& input) {
-	std::ranges::transform(input, input.begin(), [](unsigned char c) { return std::tolower(c); });
+auto to_lower(const std::string& input) ->std::string {
+	std::string lower_string;
+	lower_string.reserve(input.size());
+	std::ranges::transform(input, std::back_inserter(lower_string), [](unsigned char c) { return std::tolower(c); });
+	return lower_string;
 }
 
 auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<std::string> {
@@ -29,10 +33,8 @@ auto word_ladder::generate(const std::string& from,
                            const std::string& to,
                            const std::unordered_set<std::string>& lexicon) -> std::vector<std::vector<std::string>> {
 	// Convert to lowercase in place
-	std::string lower_from = from;
-	std::string lower_to = to;
-	to_lower(lower_from);
-	to_lower(lower_to);
+	std::string lower_from = to_lower(from);
+	std::string lower_to = to_lower(to);
 
 	std::vector<std::vector<std::string>> result; // the vector of word ladders
 
@@ -85,12 +87,5 @@ auto word_ladder::generate(const std::string& from,
 	}
 
 	std::sort(result.begin(), result.end()); // sort the solutions in lexicographical order
-	for (const auto& ladder : result) {
-		for (const auto& word : ladder) {
-			std::cout << word << " ";
-		}
-		std::cout << std::endl;
-	}
-
 	return result;
 }

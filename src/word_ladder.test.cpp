@@ -1,7 +1,6 @@
 #include "word_ladder.h"
 
 #include <catch2/catch.hpp>
-#include <iostream>
 #include <string>
 
 TEST_CASE("word_ladder::read_lexicon works as expected") {
@@ -47,9 +46,10 @@ TEST_CASE("airplane -> tricycle") {
 }
 
 TEST_CASE("Cat -> Dog") {
-	auto const lexicon = std::unordered_set<std::string>{"Cat","cat" , "cot", "cog", "dot", "dog", "Dog"};
+	auto const lexicon = std::unordered_set<std::string>{"Cat", "cat", "cot", "cog", "dot", "dog", "Dog"};
 
-	const auto expected = std::vector<std::vector<std::string>>{{"cat", "cot", "cog", "dog"},{"cat", "cot", "dot", "dog"}};
+	const auto expected =
+	    std::vector<std::vector<std::string>>{{"cat", "cot", "cog", "dog"}, {"cat", "cot", "dot", "dog"}};
 
 	auto const ladders = word_ladder::generate("Cat", "Dog", lexicon);
 
