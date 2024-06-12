@@ -36,15 +36,24 @@ TEST_CASE("airplane -> tricycle") {
 }
 
 TEST_CASE("awake -> sleep") {
-	auto const lexicon = std::unordered_set<std::string>{
-	    "awake", "aware", "sware", "share", "shire", "shirr", "shier", "sheer", "sheep", "sleep",
-	    "sharn", "shawn", "shewn", "sheen"
-	};
+	auto const lexicon = std::unordered_set<std::string>{"awake",
+	                                                     "aware",
+	                                                     "sware",
+	                                                     "share",
+	                                                     "shire",
+	                                                     "shirr",
+	                                                     "shier",
+	                                                     "sheer",
+	                                                     "sheep",
+	                                                     "sleep",
+	                                                     "sharn",
+	                                                     "shawn",
+	                                                     "shewn",
+	                                                     "sheen"};
 
 	const auto expected = std::vector<std::vector<std::string>>{
-	    {"awake","aware","sware","share","sharn","shawn","shewn","sheen","sheep","sleep"},
-	    {"awake","aware","sware","share","shire","shirr","shier","sheer","sheep","sleep"}
-	};
+	    {"awake", "aware", "sware", "share", "sharn", "shawn", "shewn", "sheen", "sheep", "sleep"},
+	    {"awake", "aware", "sware", "share", "shire", "shirr", "shier", "sheer", "sheep", "sleep"}};
 	auto const ladders = word_ladder::generate("awake", "sleep", lexicon);
 
 	CHECK(ladders == expected);

@@ -1,8 +1,8 @@
 #include "word_ladder.h"
-#include <fstream> // for std::ifstream
-#include <queue> // for std::queue
 #include <algorithm>
+#include <fstream> // for std::ifstream
 #include <iostream>
+#include <queue> // for std::queue
 
 auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<std::string> {
 	std::unordered_set<std::string> lexicon;
@@ -28,11 +28,13 @@ auto word_ladder::generate(const std::string& from,
 	std::unordered_set<std::string> filtered_lexicon; // 过滤后的词典
 	size_t length = from.size(); // 计算 from 单词的长度
 	// 遍历 lexicon，仅添加长度与 from 相同的单词到新的字典中
-	std::copy_if(lexicon.begin(), lexicon.end(), std::inserter(filtered_lexicon, filtered_lexicon.end()),
+	std::copy_if(lexicon.begin(),
+	             lexicon.end(),
+	             std::inserter(filtered_lexicon, filtered_lexicon.end()),
 	             [length](const std::string& word) { return word.size() == length; });
 
 	size_t s = filtered_lexicon.size();
-	std::cout << s <<'\n';
+	std::cout << s << '\n';
 
 	std::queue<std::vector<std::string>> queue; // 使用queue储存待访问单词
 	std::unordered_set<std::string> visited; // 使用set储存已访问单词
@@ -56,7 +58,7 @@ auto word_ladder::generate(const std::string& from,
 						continue; // 如果字母是原始字母就跳过
 					current_word[pos] = c; // 更改字符
 					// 只有那些既存在于字典中又未被之前的搜索路径访问过的单词才会被处理
-					if (filtered_lexicon.contains(current_word) and !visited.contains(current_word)){
+					if (filtered_lexicon.contains(current_word) and !visited.contains(current_word)) {
 						std::vector<std::string> new_path = path; // 创建一个新的路径
 						new_path.push_back(current_word); // 将当前单词添加到新路径的末尾
 						if (current_word == to) {
@@ -72,6 +74,6 @@ auto word_ladder::generate(const std::string& from,
 		visited.insert(to_be_visited.begin(), to_be_visited.end()); // 更新已访问集合
 	}
 
-	std::sort(result.begin(), result.end());  // 使用默认比较函数，它会比较vector内的元素
+	std::sort(result.begin(), result.end()); // 使用默认比较函数，它会比较vector内的元素
 	return result; // 返回结果，如果没有找到路径则为空
 }
