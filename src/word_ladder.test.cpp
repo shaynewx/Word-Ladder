@@ -47,11 +47,11 @@ TEST_CASE("airplane -> tricycle") {
 }
 
 TEST_CASE("Cat -> Dog") {
-	auto const lexicon = std::unordered_set<std::string>{"Cat", "cot", "cog", "dat", "Dog"};
+	auto const lexicon = std::unordered_set<std::string>{"Cat","cat" , "cot", "cog", "dot", "dog", "Dog"};
 
-	const auto expected = std::vector<std::vector<std::string>>{{"cat", "cot", "cog", "dog"},{"cat", "cot", "dat", "dog"}};
+	const auto expected = std::vector<std::vector<std::string>>{{"cat", "cot", "cog", "dog"},{"cat", "cot", "dot", "dog"}};
 
-	auto const ladders = word_ladder::generate("Cat", "ogD", lexicon);
+	auto const ladders = word_ladder::generate("Cat", "Dog", lexicon);
 
 	CHECK(ladders == expected);
 }

@@ -1,8 +1,14 @@
 #include "word_ladder.h"
 #include <algorithm>
-#include <fstream> // for std::ifstream
+#include <cctype>
+#include <fstream>
 #include <iostream>
-#include <queue> // for std::queue
+#include <queue>
+
+// convert a string to lowercase
+void to_lower(std::string& input) {
+	std::ranges::transform(input, input.begin(), [](unsigned char c) { return std::tolower(c); });
+}
 
 auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<std::string> {
 	std::unordered_set<std::string> lexicon;
@@ -22,10 +28,16 @@ auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<st
 auto word_ladder::generate(const std::string& from,
                            const std::string& to,
                            const std::unordered_set<std::string>& lexicon) -> std::vector<std::vector<std::string>> {
+	// Convert to lowercase in place
+	std::string lower_from = from;
+	std::string lower_to = to;
+	to_lower(lower_from);
+	to_lower(lower_to);
+
 	std::vector<std::vector<std::string>> result; // the vector of word ladders
 
 	std::unordered_set<std::string> filtered_lexicon;
-	size_t length = from.size();
+	size_t length = lower_from.size();
 	// keep those words with the same length as start word
 	std::copy_if(lexicon.begin(),
 	             lexicon.end(),
@@ -34,7 +46,7 @@ auto word_ladder::generate(const std::string& from,
 
 	std::queue<std::vector<std::string>> queue; // use queue to store words which wait to search next hop
 	std::unordered_set<std::string> visited; // use set to store words have been visited
-	queue.push({from}); // initialize the queue by push the vector of first word
+	queue.push({lower_from}); // initialize the queue by push the vector of first word
 
 	// for each word in the queue, search for the word with same length but with one letter difference while queue is
 	// not empty
@@ -59,7 +71,7 @@ auto word_ladder::generate(const std::string& from,
 					if (filtered_lexicon.contains(current_word) and !visited.contains(current_word)) {
 						std::vector<std::string> new_path = path;
 						new_path.push_back(current_word); // create a new path and add the word into it
-						if (current_word == to) {
+						if (current_word == lower_to) {
 							result.push_back(new_path);
 						}
 						queue.push(new_path);
