@@ -7,7 +7,7 @@
 #include <queue>
 
 // convert a string to lowercase
-auto to_lower(const std::string& input) ->std::string {
+auto to_lower(const std::string& input) -> std::string {
 	std::string lower_string;
 	lower_string.reserve(input.size());
 	std::ranges::transform(input, std::back_inserter(lower_string), [](unsigned char c) { return std::tolower(c); });
@@ -29,9 +29,11 @@ auto word_ladder::read_lexicon(const std::string& path) -> std::unordered_set<st
 	return lexicon;
 }
 
-auto expand_paths(std::queue<std::vector<std::string>>& queue, std::unordered_set<std::string>& visited,
-                  const std::unordered_set<std::string>& filtered_lexicon, std::vector<std::vector<std::string>>& result,
-                  const std::string& lower_to) ->void {
+auto expand_paths(std::queue<std::vector<std::string>>& queue,
+                  std::unordered_set<std::string>& visited,
+                  const std::unordered_set<std::string>& filtered_lexicon,
+                  std::vector<std::vector<std::string>>& result,
+                  const std::string& lower_to) -> void {
 	std::size_t current_size = queue.size();
 	std::unordered_set<std::string> to_be_visited; // record the words have been visited in this layer
 
