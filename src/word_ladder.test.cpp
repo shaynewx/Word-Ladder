@@ -26,11 +26,11 @@ TEST_CASE("at -> it") {
 }
 
 TEST_CASE("lead -> land") {
-	auto const lexicon = std::unordered_set<std::string>{"lead", "land"};
+	auto const lexicon = word_ladder::read_lexicon("./english.txt");
 
-	const auto expected = std::vector<std::vector<std::string>>{{"lead", "lend", "load"}};
+	const auto expected = std::vector<std::vector<std::string>>{{"lead", "lend", "land"}};
 
-	auto const ladders = word_ladder::generate("lead", "load", lexicon);
+	auto const ladders = word_ladder::generate("lead", "land", lexicon);
 
 	CHECK(ladders == expected);
 }
