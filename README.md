@@ -84,7 +84,7 @@ Reads a lexicon from a file.
 
 Unit tests are provided in `word_ladder_test.cpp` to ensure the correctness and efficiency of the library. To run the tests:
 
-1. Configure your project with CMake:
+1. Configure your project with CMake in the root directory:
     ```sh
     cmake -B build
     ```
