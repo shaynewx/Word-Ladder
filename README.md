@@ -28,7 +28,7 @@ To include the Word Ladder library in your project:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/shaynewx/word-ladder.git
+    git clone git@github.com:shaynewx/Word-Ladder.git
     ```
 2. Include the library files in your project:
     - `word_ladder.h`
