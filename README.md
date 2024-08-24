@@ -1,7 +1,3 @@
-Here's the updated README file with attribution added to the creator of the original project:
-
----
-
 # Word Ladder Library
 
 A C++ library for generating word ladders, demonstrating the use of C++ Standard Library containers and algorithms.
