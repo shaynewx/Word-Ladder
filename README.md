@@ -14,6 +14,23 @@ A word ladder connects one word to another by altering one letter at a time, ens
 code -> cade -> cate -> date -> data
 ```
 
+Many word ladders, like the transition from "work" to "play", will have multiple valid solutions. Below are some of the possible solutions found by our library:
+```
+work fork form foam flam flay play
+work pork perk peak pean plan play
+work pork perk peak peat plat play
+work pork perk pert peat plat play
+work pork porn pirn pian plan play
+work pork port pert peat plat play
+work word wood pood plod ploy play
+work worm form foam flam flay play
+work worn porn pirn pian plan play
+work wort bort boat blat plat play
+work wort port pert peat plat play
+work wort wert pert peat plat play
+```
+
+
 The library ensures all possible shortest paths are found and returned in lexicographical order.
 
 ### Features
