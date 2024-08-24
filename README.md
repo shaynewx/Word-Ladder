@@ -4,7 +4,7 @@ A C++ library for generating word ladders, demonstrating the use of C++ Standard
 
 ## Overview
 
-This library provides a back-end for generating word ladders—a sequence of words connecting two given words by changing one letter at a time, with each intermediate word being valid. The shortest path from the start word to the destination word is guaranteed using the breadth-first search algorithm.
+This library provides a back-end for generating word ladders —— a sequence of words connecting two given words by changing one letter at a time, with each intermediate word being valid. The shortest path from the start word to the destination word is guaranteed using the breadth-first search algorithm.
 
 ### What is a Word Ladder?
 
