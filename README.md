@@ -47,9 +47,9 @@ To include the Word Ladder library in your project:
     ```sh
     git clone git@github.com:shaynewx/Word-Ladder.git
     ```
-2. Include the library files in your project:
-    - `src/word_ladder.h`
-    - `src/word_ladder.cpp`
+2. Include the library files from the `src` directory in your project:
+    - `word_ladder.h`
+    - `word_ladder.cpp`
 
 3. Compile your project using a C++ compiler that supports C++17 or later.
 
