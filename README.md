@@ -141,3 +141,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Attribution
 
 This project is based on an original assignment developed for educational purposes. All credit goes to the original creator of the assignment for the foundational concept and structure of this word ladder project.
+
+### Contributors
+- **[chamhayden](https://github.com/chamhayden)**: Provided initial test cases and benchmarks.
+- **[shaynewx](https://github.com/shaynewx)**: Contributed to the core algorithm and optimization.
+
