@@ -124,7 +124,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Attribution
 
 This project is based on an original assignment developed for educational purposes. All credit goes to the original creator of the assignment for the foundational concept and structure of this word ladder project.
-
----
-
-This version includes an "Attribution" section at the end of the README to acknowledge the original creator of the project.
