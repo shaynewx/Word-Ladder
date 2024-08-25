@@ -145,4 +145,3 @@ This project is based on an original assignment developed for educational purpos
 ### Contributors
 - **[chamhayden](https://github.com/chamhayden)**: Provided initial test cases and benchmarks.
 - **[shaynewx](https://github.com/shaynewx)**: Contributed to the core algorithm and optimization.
-
