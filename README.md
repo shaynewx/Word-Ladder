@@ -112,7 +112,7 @@ Unit tests are provided in `src/word_ladder_test.cpp` to ensure the correctness 
     ```
 3. Run the tests:
     ```sh
-    ctest
+    ./word_ladder_test_exe 
     ```
 
 ## Benchmarking
@@ -127,7 +127,7 @@ The library includes a benchmark utility to test performance with large datasets
     ```
 2. Execute the benchmark:
     ```sh
-    ./word_ladder_benchmark
+    ./word_ladder_benchmark_exe
     ```
 
 ## Contribution
@@ -143,5 +143,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 This project is based on an original assignment developed for educational purposes. All credit goes to the original creator of the assignment for the foundational concept and structure of this word ladder project.
 
 ### Contributors
-- **[chamhayden](https://github.com/chamhayden)**: Provided initial test cases and benchmarks.
-- **[shaynewx](https://github.com/shaynewx)**: Contributed to the core algorithm and optimization.
+- **[Cham Hayden](https://github.com/chamhayden)**: Provided initial test cases and benchmarks.
+- **[Shayne Wang](https://github.com/shaynewx)**: Contributed to the core algorithm and optimization.
